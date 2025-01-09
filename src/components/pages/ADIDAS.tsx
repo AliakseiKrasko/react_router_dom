@@ -5,8 +5,10 @@ import adidasModel3
     from './../../assets/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.webp'
 import {Link} from 'react-router-dom';
 import {S} from './_styles';
+import { v1 } from 'uuid';
 
 export type AdidasItem = {
+    id: number;
     model: string;
     collection: string;
     price: string;
@@ -14,6 +16,7 @@ export type AdidasItem = {
 }
 export const adidasArr: AdidasItem[] = [
     {
+        id: 1,
         model: 'ADIDAS ADIFOM TRXN',
         collection: 'new collection1',
         price: '100200$',
@@ -21,12 +24,14 @@ export const adidasArr: AdidasItem[] = [
 
     },
     {
+        id: 2,
         model: 'ADIDAS ADIFOM SUPER',
         collection: 'new collection22',
         price: '200300$',
         picture: adidasModel2
     },
     {
+        id: 3,
         model: 'ADIDAS SUPER SUPERSKI',
         collection: 'new collection333',
         price: '300400$',
@@ -39,8 +44,8 @@ export const ADIDAS = () => {
         <div>
             <h2 style={{textAlign: 'center'}}> ADIDAS</h2>
             <div style={{display: 'flex', gap: '20px', justifyContent: 'space-around'}}>
-                {adidasArr.map((adidas, index) => (
-                    <Link key={index} to={'/adidas/model'}>
+                {adidasArr.map((adidas) => (
+                    <Link key={adidas.id} to={`/adidas/${adidas.id}`}>
                                 <img width={'250px'}
                                      src={adidas.picture}
                                      alt={'ADIDAS'}

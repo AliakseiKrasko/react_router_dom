@@ -1,10 +1,16 @@
 import React from 'react';
+import {useParams} from 'react-router-dom';
+import {adidasArr} from './ADIDAS';
 
 export const Model: React.FC = () => {
+    const params = useParams();
+    const modelId = Number(params.id) - 1;
     return (
-        <div>
-            <h2>Model Page</h2>
-            <p>This is the Model page content.</p>
+        <div style={{textAlign:'center'}}>
+           <h2>{adidasArr[modelId].model}</h2>
+            <h3>{adidasArr[modelId].collection}</h3>
+            <h4>{adidasArr[modelId].price}</h4>
+            <img src={adidasArr[modelId].picture} alt="adidas"/>
         </div>
     );
 };

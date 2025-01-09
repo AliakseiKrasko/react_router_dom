@@ -9,9 +9,9 @@ import {S} from './components/pages/_styles';
 import {Model} from './components/pages/Model';
 
 const PATH = {
-    PAGE1: '/ADIDAS',
-    PAGE2: '/PUMA',
-    PAGE3: '/NIKE',
+    PAGE1: '/adidas',
+    PAGE2: '/puma',
+    PAGE3: '/nike',
 } as const;
 
 function App() {
@@ -20,15 +20,15 @@ function App() {
             <div className={styles.header}><h1>HEADER</h1></div>
             <div className={styles.body}>
                 <div className={styles.nav}>
-                    <S.NavWrapper><NavLink to={PATH.PAGE1}>ADIDAS</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.PAGE2}>PUMA</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.PAGE3}>NIKE</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.PAGE1}>Adidas</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.PAGE2}>Puma</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.PAGE3}>Nike</NavLink></S.NavWrapper>
                     {/*<a href="page3">ERROR</a>*/}
                 </div>
                 <div className={styles.content}>
                     <Routes>
-                        <Route path={'/'} element={<Navigate to={'/page1'}/>}/>
-                        <Route path={'/adidas/model'} element={<Model/>}/>
+                        <Route path={'/'} element={<Navigate to={'/adidas'}/>}/>
+                        <Route path={'/adidas/:id'} element={<Model/>}/>
                         <Route path={PATH.PAGE1} element={<ADIDAS/>}/>
                         <Route path={PATH.PAGE2} element={<PUMA/>}/>
                         <Route path={PATH.PAGE3} element={<NIKE/>}/>
