@@ -1,8 +1,8 @@
 import React from 'react';
-import adidasModel1 from '../../assets/model-krossovok-puma-suede.jpg';
-import adidasModel2 from '../../assets/Superstar_XLG_Shoes_Black_IG9777_01_standard.webp';
+import adidasModel1 from '../../assets/4wf0ne182yj00yhrhtxgaa0vzhvgovt1.png';
+import adidasModel2 from '../../assets/616afaae12df5f89ce378483da65064d.jpg';
 import adidasModel3
-    from '../../assets/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.webp';
+    from '../../assets/nike_air_zoom_pegasus_40_dv3853_400_(1).jpg';
 import {Link} from 'react-router-dom';
 
 
@@ -47,7 +47,7 @@ export const NIKE = () => {
             <div style={{display: 'flex', gap: '20px', justifyContent: 'space-around'}}>
                 {nikeArr.map((nike) => (
                     <Link key={nike.id} to={`/nike/${nike.id}`}>
-                        <img width={'250px'} src={nike.picture}/>
+                        <img width={'250px'} height={'200px'} src={nike.picture}/>
                     </Link>
                 ))}
             </div>

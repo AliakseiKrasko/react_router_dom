@@ -12,12 +12,12 @@ export const Model: React.FC = () => {
             <h3>{adidasArr[modelId].collection}</h3>
             <h4>{adidasArr[modelId].price}</h4>
             <img src={adidasArr[modelId].picture} alt="adidas"/>
-
+{/*
 
             <h2>{pumaArr[modelId].model}</h2>
             <h3>{pumaArr[modelId].collection}</h3>
             <h4>{pumaArr[modelId].price}</h4>
-            <img src={pumaArr[modelId].picture} alt="adidas"/>
+            <img src={pumaArr[modelId].picture} alt="adidas"/>*/}
         </div>
 
 
