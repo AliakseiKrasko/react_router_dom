@@ -25,6 +25,10 @@
     width: 70%;
     color: white;
     font-size: 30px;
+
+}
+.content h2 {
+    text-align: center;
 }
 
 .footer {

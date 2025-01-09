@@ -1,22 +1,22 @@
 import styled from "styled-components";
 
 const NavWrapper = styled.div`
-  margin-left: 10px;
-  font-size: 20px;
+    margin-left: 10px;
+    font-size: 20px;
 
-  NavWrapper > a {
-    text-decoration: none;
-    color: #1e3786;
-  }
+    NavWrapper > a {
+        text-decoration: none;
+        color: #1e3786;
+    }
 
-  & > a.active {
-    text-decoration: none;
-    color: #03eaff;
-  }
+    & > a.active {
+        text-decoration: none;
+        color: #ec328f;
+    }
 
-  & > a:hover {
-    color: steelblue; /* Цвет ссылки */
-  }
+    & > a:hover {
+        color: steelblue; /* Цвет ссылки */
+    }
 `
 
 
