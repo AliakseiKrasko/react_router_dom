@@ -29,6 +29,8 @@ function App() {
                     <Routes>
                         <Route path={'/'} element={<Navigate to={'/adidas'}/>}/>
                         <Route path={'/adidas/:id'} element={<Model/>}/>
+                        <Route path={'/puma/:id'} element={<Model/>}/>
+                        <Route path={'/nike/:id'} element={<Model/>}/>
                         <Route path={PATH.PAGE1} element={<ADIDAS/>}/>
                         <Route path={PATH.PAGE2} element={<PUMA/>}/>
                         <Route path={PATH.PAGE3} element={<NIKE/>}/>
