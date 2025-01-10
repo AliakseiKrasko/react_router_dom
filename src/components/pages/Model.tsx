@@ -38,7 +38,7 @@ export const Model: React.FC = () => {
 
 
 
-    console.log(currentArray)
+
     return (
 
         <div style={{ textAlign: 'center' }}>
@@ -47,7 +47,7 @@ export const Model: React.FC = () => {
                     <h4>{currentModel.model}</h4>
                     <h5>{currentModel.collection}</h5>
                     <h6>{currentModel.price}</h6>
-                    <img src={currentModel.picture} alt={currentModel.model} />
+                    <img src={currentModel.picture} alt={currentModel.model} width={'450px'} height={'300px'} />
                 </>
             ) : (
                 <h2>Такого товара нет в наличии</h2>
