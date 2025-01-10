@@ -1,42 +1,55 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { adidasArr } from './ADIDAS';
-import { pumaArr } from './PUMA';
+import {adidasArr} from './ADIDAS';
+import {pumaArr} from './PUMA';
 import {nikeArr} from './NIKE';
 
+
+type CrossItem = {
+    id: number;
+    model: string;
+    collection: string;
+    price: string;
+    picture: string;
+};
+
+type CrossModels = {
+    [key: string]: CrossItem[];
+};
+
+const crossModels: CrossModels = {
+    adidas: adidasArr,
+    puma: pumaArr,
+    nike: nikeArr,
+};
+
+
 export const Model: React.FC = () => {
-    const params = useParams();
-    const modelId = Number(params.id);
 
-    // Находим текущую модель
-    const modelAdidas = adidasArr.find(el => el.id === modelId);
-    const modelPuma = pumaArr.find(el => el.id === modelId);
-    const modelNike = nikeArr.find(el => el.id === modelId);
+    const { brand, id } = useParams();
 
+    if (!brand || !id || !crossModels[brand.toLowerCase()]) {
+        return <h4>Некорректный запрос</h4>;
+    }
+
+    const currentArray = crossModels[brand.toLowerCase()];
+    const currentModel = currentArray.find((el) => el.id === Number(id));
+
+
+
+
+    console.log(currentArray)
     return (
+
         <div style={{ textAlign: 'center' }}>
-            {modelAdidas ? (
+            {currentModel ? (
                 <>
-                    <h2>{modelAdidas.model}</h2>
-                    <h3>{modelAdidas.collection}</h3>
-                    <h4>{modelAdidas.price}</h4>
-                    <img src={modelAdidas.picture} alt={modelAdidas.model} />
+                    <h4>{currentModel.model}</h4>
+                    <h5>{currentModel.collection}</h5>
+                    <h6>{currentModel.price}</h6>
+                    <img src={currentModel.picture} alt={currentModel.model} />
                 </>
-            ) : modelPuma ?
-                <>
-                    <h2>{modelPuma.model}</h2>
-                    <h3>{modelPuma.collection}</h3>
-                    <h4>{modelPuma.price}</h4>
-                    <img src={modelPuma.picture} alt={modelPuma.model} width={'800px'} height={'500px'} />
-                </>
-                : modelNike ?
-                    <>
-                        <h2>{modelNike.model}</h2>
-                        <h3>{modelNike.collection}</h3>
-                        <h4>{modelNike.price}</h4>
-                        <img src={modelNike.picture} alt={modelNike.model} width={'800px'} />
-                    </>
-                : (
+            ) : (
                 <h2>Такого товара нет в наличии</h2>
             )}
         </div>

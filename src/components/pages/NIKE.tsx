@@ -16,22 +16,22 @@ export type NikeItem = {
 
 export const nikeArr: NikeItem[] = [
     {
-        id: 7,
-        model: 'ADIDAS ADIFOM TRXN',
+        id: 1,
+        model: 'NIKE',
         collection: 'new collection1',
         price: '100200$',
         picture: adidasModel1,
 
     },
     {
-        id: 8,
+        id: 2,
         model: 'ADIDAS ADIFOM SUPER',
         collection: 'new collection22',
         price: '200300$',
         picture: adidasModel2
     },
     {
-        id: 9,
+        id: 3,
         model: 'ADIDAS SUPER SUPERSKI',
         collection: 'new collection333',
         price: '300400$',
