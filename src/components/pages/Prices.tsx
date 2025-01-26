@@ -40,11 +40,12 @@ export const Prices = (props: Props) => {
     const [filteredSneakers, setFilteredSneakers] = useState(sneakers);
 
     function handleOnSale() {
-
+        const sneakersOnSale = sneakers.filter(el => el.onSale === true)
+        setFilteredSneakers(sneakersOnSale);
     }
 
     function handleReset() {
-
+        setFilteredSneakers(sneakers);
     }
 
 

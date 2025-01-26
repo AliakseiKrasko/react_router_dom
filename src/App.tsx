@@ -7,6 +7,7 @@ import {NIKE} from "./components/pages/NIKE";
 import styles from "./components/Site.module.css";
 import {S} from './components/pages/_styles';
 import {Model} from './components/pages/Model';
+import {Prices} from './components/pages/Prices';
 
 const PATH = {
     PAGE1: '/adidas',
@@ -36,6 +37,7 @@ function App() {
                         <Route path={PATH.PAGE1} element={<ADIDAS/>}/>
                         <Route path={PATH.PAGE2} element={<PUMA/>}/>
                         <Route path={PATH.PAGE3} element={<NIKE/>}/>
+                        <Route path={PATH.PAGE4} element={<Prices/>}/>
 
                         <Route path={'/*'} element={<Error404/>}/>
                     </Routes>
