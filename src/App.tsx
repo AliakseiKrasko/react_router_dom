@@ -12,18 +12,20 @@ const PATH = {
     PAGE1: '/adidas',
     PAGE2: '/puma',
     PAGE3: '/nike',
+    PAGE4: '/wholesale-prices',
 } as const;
 
 function App() {
     return (
-        <div>
+        <>
             <div className={styles.header}><h1>HEADER</h1></div>
             <div className={styles.body}>
                 <div className={styles.nav}>
                     <S.NavWrapper><NavLink to={PATH.PAGE1}>Adidas</NavLink></S.NavWrapper>
                     <S.NavWrapper><NavLink to={PATH.PAGE2}>Puma</NavLink></S.NavWrapper>
                     <S.NavWrapper><NavLink to={PATH.PAGE3}>Nike</NavLink></S.NavWrapper>
-                    {/*<a href="page3">ERROR</a>*/}
+                    <S.NavWrapper><NavLink to={PATH.PAGE4}>Цены для оптовиков</NavLink></S.NavWrapper>
+
                 </div>
                 <div className={styles.content}>
                     <Routes>
@@ -40,7 +42,7 @@ function App() {
                 </div>
             </div>
             <div className={styles.footer}>Colection 2025</div>
-        </div>
+        </>
     );
 }
 
