@@ -1,19 +1,13 @@
 import React from 'react';
-import {Navigate, NavLink, Route, Routes} from 'react-router-dom';
-import {Error404} from "./components/pages/Error404";
-import {ADIDAS} from "./components/pages/ADIDAS";
-import {PUMA} from "./components/pages/PUMA";
-import {NIKE} from "./components/pages/NIKE";
+import {NavLink, Outlet} from 'react-router-dom';
 import styles from "./components/Site.module.css";
 import {S} from './components/pages/_styles';
-import {Model} from './components/pages/Model';
-import {Prices} from './components/pages/Prices';
 
 const PATH = {
-    PAGE1: '/adidas',
-    PAGE2: '/puma',
-    PAGE3: '/nike',
-    PAGE4: '/wholesale-prices',
+    ADIDAS: '/adidas',
+    PUMA: '/puma',
+    NIKE: '/nike',
+    PRICES: '/wholesale-prices',
 } as const;
 
 function App() {
@@ -22,25 +16,15 @@ function App() {
             <div className={styles.header}><h1>HEADER</h1></div>
             <div className={styles.body}>
                 <div className={styles.nav}>
-                    <S.NavWrapper><NavLink to={PATH.PAGE1}>Adidas</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.PAGE2}>Puma</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.PAGE3}>Nike</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.PAGE4}>Цены для оптовиков</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.ADIDAS}>Adidas</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.PUMA}>Puma</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.NIKE}>Nike</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={PATH.PRICES}>Wholesale price</NavLink></S.NavWrapper>
 
                 </div>
                 <div className={styles.content}>
-                    <Routes>
-                        <Route path={'/'} element={<Navigate to={'/adidas'}/>}/>
+                    <Outlet />
 
-                        <Route path="/:brand/:id" element={<Model />} />
-
-                        <Route path={PATH.PAGE1} element={<ADIDAS/>}/>
-                        <Route path={PATH.PAGE2} element={<PUMA/>}/>
-                        <Route path={PATH.PAGE3} element={<NIKE/>}/>
-                        <Route path={PATH.PAGE4} element={<Prices/>}/>
-
-                        <Route path={'/*'} element={<Error404/>}/>
-                    </Routes>
                 </div>
             </div>
             <div className={styles.footer}>Colection 2025</div>
