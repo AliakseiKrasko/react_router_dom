@@ -62,8 +62,7 @@ export const Prices = (props: Props) => {
     }, [searchParams]);
 
 
-    return (
-        <div>
+    return  <div>
             <button onClick={handleOnSale} className={styles.buttonStyle}>On sale</button>
             <button onClick={handleReset} className={styles.buttonStyle}>Reset filter</button>
 
@@ -77,16 +76,16 @@ export const Prices = (props: Props) => {
                 </tr>
                 </thead>
                 <tbody>
-                {filteredSneakers.map((sneaker, index) => (
+                {filteredSneakers.map((sneaker, index) =>
                     <tr key={index}>
                         <td className={styles.tdStyle}>{sneaker.manufacturer}</td>
                         <td className={styles.tdStyle}>{sneaker.name}</td>
                         <td className={styles.tdStyle}>${sneaker.price}</td>
                         <td className={styles.tdStyle}>{sneaker.onSale ? 'Yes' : 'No'}</td>
                     </tr>
-                ))}
+                )}
                 </tbody>
             </table>
         </div>
-    );
+
 };

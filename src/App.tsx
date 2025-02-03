@@ -11,25 +11,24 @@ const PATH = {
 } as const;
 
 function App() {
-    return (
-        <>
-            <div className={styles.header}><h1>HEADER</h1></div>
-            <div className={styles.body}>
-                <div className={styles.nav}>
-                    <S.NavWrapper><NavLink to={PATH.ADIDAS}>Adidas</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.PUMA}>Puma</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.NIKE}>Nike</NavLink></S.NavWrapper>
-                    <S.NavWrapper><NavLink to={PATH.PRICES}>Wholesale price</NavLink></S.NavWrapper>
-
-                </div>
-                <div className={styles.content}>
-                    <Outlet />
-
-                </div>
+    return <><div className={styles.header}>
+        <h1>HEADER</h1>
+    </div>
+        <div className={styles.body}>
+        <div className={styles.nav}>
+            <S.NavWrapper><NavLink to={PATH.ADIDAS}>Adidas</NavLink></S.NavWrapper>
+            <S.NavWrapper><NavLink to={PATH.PUMA}>Puma</NavLink></S.NavWrapper>
+            <S.NavWrapper><NavLink to={PATH.NIKE}>Nike</NavLink></S.NavWrapper>
+            <S.NavWrapper><NavLink to={PATH.PRICES}>Price</NavLink></S.NavWrapper>
+        </div>
+            <div className={styles.content}>
+                <Outlet />
             </div>
-            <div className={styles.footer}>Colection 2025</div>
-        </>
-    );
+        </div>
+        <div className={styles.footer}>Colection 2025
+        </div>
+    </>;
 }
+
 
 export default App;
