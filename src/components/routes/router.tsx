@@ -6,13 +6,15 @@ import {PUMA} from '../pages/PUMA';
 import {NIKE} from '../pages/NIKE';
 import {Prices} from '../pages/Prices';
 import {Model} from '../pages/Model';
+import {ProtectedPage} from '../pages/ProtectedPage';
 
 const PATH = {
     ADIDAS: '/adidas',
     PUMA: '/puma',
     NIKE: '/nike',
     PRICES: '/wholesale-prices',
-    MODEL: '/:brand/:id'
+    MODEL: '/:brand/:id',
+    PROTECTEDPAGE: '/protectedpade',
 } as const;
 
 export const router = createBrowserRouter([
@@ -40,6 +42,10 @@ export const router = createBrowserRouter([
             {
                 path: PATH.MODEL,
                 element: <Model />,
+            },
+            {
+                path: PATH.PROTECTEDPAGE,
+                element: <ProtectedPage />,
             },
         ],
     },
