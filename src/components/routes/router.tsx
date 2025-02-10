@@ -7,6 +7,7 @@ import {NIKE} from '../pages/NIKE';
 import {Prices} from '../pages/Prices';
 import {Model} from '../pages/Model';
 import {ProtectedPage} from '../pages/ProtectedPage';
+import {ProtectedRoute} from './ProtectedRoute';
 
 const PATH = {
     ADIDAS: '/adidas',
@@ -14,7 +15,7 @@ const PATH = {
     NIKE: '/nike',
     PRICES: '/wholesale-prices',
     MODEL: '/:brand/:id',
-    PROTECTEDPAGE: '/protectedpade',
+    PROTECTEDPAGE: '/protectedpage',
 } as const;
 
 export const router = createBrowserRouter([
@@ -45,7 +46,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: PATH.PROTECTEDPAGE,
-                element: <ProtectedPage />,
+                element:
+                    <ProtectedRoute>
+                        <ProtectedPage />
+                    </ProtectedRoute>
+
             },
         ],
     },

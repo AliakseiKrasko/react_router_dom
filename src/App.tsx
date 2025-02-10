@@ -8,7 +8,7 @@ const PATH = {
     PUMA: '/puma',
     NIKE: '/nike',
     PRICES: '/wholesale-prices',
-    PROTECTEDPAGE: '/protectedpade',
+    PROTECTEDPAGE: '/protectedpage',
 } as const;
 
 function App() {
