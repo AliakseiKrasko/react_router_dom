@@ -16,41 +16,48 @@ const PATH = {
     PRICES: '/wholesale-prices',
     MODEL: '/:brand/:id',
     PROTECTEDPAGE: '/protectedpage',
+    ERROR: '/error',
 } as const;
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <App/>,
-        errorElement: <Error404 />,
+        errorElement: <Error404/>,
         children: [
             {
                 path: PATH.ADIDAS,
-                element: <ADIDAS />,
+                element: <ADIDAS/>,
             },
             {
                 path: PATH.PUMA,
-                element: <PUMA />,
+                element: <PUMA/>,
             },
             {
                 path: PATH.NIKE,
-                element: <NIKE />,
+                element: <NIKE/>,
             },
             {
                 path: PATH.PRICES,
-                element: <Prices />,
+                element: <Prices/>,
             },
             {
                 path: PATH.MODEL,
-                element: <Model />,
+                element: <Model/>,
             },
             {
                 path: PATH.PROTECTEDPAGE,
                 element:
                     <ProtectedRoute>
-                        <ProtectedPage />
+                        <ProtectedPage/>
                     </ProtectedRoute>
-
+            },
+            {
+                path: PATH.ERROR,
+                element: <Error404/>,
+            },
+            {
+                path: '*', element: <Error404/>
             },
         ],
     },

@@ -6,7 +6,7 @@ type Props = {
     children: ReactNode;
 };
 export const ProtectedRoute = ({children}: Props): ReactElement => {
-    const logged = true
+    const logged = false
     if (!logged) {
         return <Navigate to={'/error'} />;
     } else {
