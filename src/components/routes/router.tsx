@@ -1,4 +1,4 @@
-import {createBrowserRouter, Navigate} from 'react-router-dom';
+import {createBrowserRouter, Navigate, Outlet} from 'react-router-dom';
 import {Error404} from '../pages/Error404';
 import App from '../../App';
 import {ADIDAS} from '../pages/ADIDAS';
@@ -9,6 +9,7 @@ import {Model} from '../pages/Model';
 import {ProtectedPage} from '../pages/ProtectedPage';
 import {ProtectedRoute} from './ProtectedRoute';
 import {Login} from '../pages/Login';
+import {ReactElement} from 'react';
 
 const PATH = {
     ADIDAS: '/adidas',
@@ -21,6 +22,46 @@ const PATH = {
     LOGIN: '/login',
 } as const;
 
+
+export const publicRoutes = [
+    {
+        path: PATH.ADIDAS,
+        element: <ADIDAS/>,
+    },
+    {
+        path: PATH.PUMA,
+        element: <PUMA/>,
+    },
+    {
+        path: PATH.NIKE,
+        element: <NIKE/>,
+    },
+    {
+        path: PATH.PRICES,
+        element: <Prices/>,
+    },
+    {
+        path: PATH.MODEL,
+        element: <Model/>,
+    },
+    {
+        path: PATH.LOGIN,
+        element: <Login/>,
+    },
+];
+
+export const privateRoutes = [
+    {
+        path: PATH.PROTECTEDPAGE,
+        element: <ProtectedPage/>
+    },
+];
+
+export const PrivateRoutes = () => {
+    const isAuth = true
+    return isAuth ? <Outlet /> : <Navigate to={'/login'} />
+};
+
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -28,37 +69,10 @@ export const router = createBrowserRouter([
         errorElement: <Navigate to={PATH.ERROR}/>,
         children: [
             {
-                path: PATH.ADIDAS,
-                element: <ADIDAS/>,
+                element: <PrivateRoutes />,
+                children: privateRoutes
             },
-            {
-                path: PATH.PUMA,
-                element: <PUMA/>,
-            },
-            {
-                path: PATH.NIKE,
-                element: <NIKE/>,
-            },
-            {
-                path: PATH.PRICES,
-                element: <Prices/>,
-            },
-            {
-                path: PATH.MODEL,
-                element: <Model/>,
-            },
-            {
-                path: PATH.PROTECTEDPAGE,
-                element:
-                    <ProtectedRoute>
-                        <ProtectedPage/>
-                    </ProtectedRoute>
-            },
-            {
-                path: PATH.LOGIN,
-                element: <Login/>,
-            },
-
+            ...publicRoutes
         ],
     },
 ]);
