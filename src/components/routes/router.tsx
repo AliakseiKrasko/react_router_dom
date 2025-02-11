@@ -8,6 +8,7 @@ import {Prices} from '../pages/Prices';
 import {Model} from '../pages/Model';
 import {ProtectedPage} from '../pages/ProtectedPage';
 import {ProtectedRoute} from './ProtectedRoute';
+import {Login} from '../pages/Login';
 
 const PATH = {
     ADIDAS: '/adidas',
@@ -17,6 +18,7 @@ const PATH = {
     MODEL: '/:brand/:id',
     PROTECTEDPAGE: '/protectedpage',
     ERROR: '/error',
+    LOGIN: '/login',
 } as const;
 
 export const router = createBrowserRouter([
@@ -53,8 +55,8 @@ export const router = createBrowserRouter([
                     </ProtectedRoute>
             },
             {
-                path: PATH.ERROR,
-                element: <Error404/>,
+                path: PATH.LOGIN,
+                element: <Login/>,
             },
 
         ],
