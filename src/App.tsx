@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, NavLink, Outlet} from 'react-router-dom';
+import {Link, NavLink, Outlet, useNavigate} from 'react-router-dom';
 import styles from "./components/Site.module.css";
 import {S} from './components/pages/_styles';
 
@@ -13,6 +13,13 @@ const PATH = {
 } as const;
 
 function App() {
+
+    const navigate = useNavigate()
+
+    const navigateHandler = () => {
+        navigate(-1)
+    }
+
     return <>
         <div className={styles.header}>
             <h1>HEADER</h1>
@@ -30,6 +37,7 @@ function App() {
 
             <div className={styles.content}>
                 <Link to={PATH.ADIDAS} className={styles.LinkLikeButton}>Home page</Link>
+                <button onClick={navigateHandler} className={styles.LinkLikeButton}>Back</button>
                 <Outlet/>
             </div>
         </div>
