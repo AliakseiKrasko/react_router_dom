@@ -29,7 +29,7 @@ function App() {
             </div>
 
             <div className={styles.content}>
-                <Link to={PATH.ADIDAS} className={styles.LinkLikeButton}>На главную</Link>
+                <Link to={PATH.ADIDAS} className={styles.LinkLikeButton}>Home page</Link>
                 <Outlet/>
             </div>
         </div>
