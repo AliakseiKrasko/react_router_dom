@@ -1,6 +1,5 @@
 .LinkLikeButton {
     height: 54px;
-    width: 300px;
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
@@ -9,7 +8,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15px auto;
 }
 .LinkLikeButton:hover {
     background-color: #0056b3;

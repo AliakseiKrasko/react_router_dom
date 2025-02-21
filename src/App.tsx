@@ -36,8 +36,11 @@ function App() {
             </div>
 
             <div className={styles.content}>
-                <Link to={PATH.ADIDAS} className={styles.LinkLikeButton}>Home page</Link>
-                <button onClick={navigateHandler} className={styles.LinkLikeButton}>Back</button>
+                <div className={styles.HorizontalNavigation}>
+                    <Link to={PATH.ADIDAS} className={styles.LinkLikeButton}>Home page</Link>
+                    <button onClick={navigateHandler} className={styles.ButtonLikeLink}>Back</button>
+                </div>
+
                 <Outlet/>
             </div>
         </div>
