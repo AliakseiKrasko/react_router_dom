@@ -20,6 +20,8 @@ const PATH = {
     PROTECTEDPAGE: '/protectedpage',
     ERROR: '/error',
     LOGIN: '/login',
+    ALL:'*',
+    START: '/'
 } as const;
 
 
@@ -48,6 +50,16 @@ export const publicRoutes = [
         path: PATH.LOGIN,
         element: <Login/>,
     },
+    {
+        path: PATH.ALL,
+        element: <Error404 />
+    },
+    {
+        path: PATH.START,
+        element: <ADIDAS />
+    }
+
+
 ];
 
 export const privateRoutes = [
